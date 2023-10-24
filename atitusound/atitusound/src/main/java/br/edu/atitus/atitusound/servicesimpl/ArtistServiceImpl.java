@@ -65,12 +65,14 @@ public class ArtistServiceImpl implements ArtistService{
 		return artistRepository.findById(uuid);
 	}
 	
-	protected void validadeDeleteById (UUID uuid) throws Exception {
-	
+	protected void validateDeleteById (UUID uuid) throws Exception {
+		if (!artistRepository.existsById(uuid))
+			throw new Exception ("Registro não encontrado com este UUID");
 }
 	@Override
 	public void deleteById(UUID uuid) throws Exception {
-		validadeDeleteById(uuid);
+		validateDeleteById(uuid);
 		artistRepository.deleteById(uuid);
+		
 	}
 }
