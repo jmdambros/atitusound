@@ -10,8 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import br.edu.atitus.atitusound.entities.ArtistEntity;
 @Repository
-public interface ArtistRepository extends JpaRepository<ArtistEntity, UUID>{
-	boolean existsByNameAndUuidNot(String name, UUID uuid);
-	boolean existsByName(String name);
-Page<List<ArtistEntity>> findByNameContainingIgnoreCase(Pageable pageable,String name);	
+public interface ArtistRepository extends GenericRepository<ArtistEntity>{
+	
 }
