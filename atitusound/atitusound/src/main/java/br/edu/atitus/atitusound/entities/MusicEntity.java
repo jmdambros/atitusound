@@ -10,6 +10,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_music")
+
 public class MusicEntity extends GenericEntity {
 	
 	private Duration duration;
