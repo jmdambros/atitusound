@@ -1,4 +1,4 @@
-package br.edu.atitus.atitusound.controllers;
+	package br.edu.atitus.atitusound.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -42,15 +42,16 @@ public class PlaylistController extends GenericController<PlaylistEntity,Playlis
 
 	
 	protected PlaylistEntity convertDTO2Entity(PlaylistDTO dto) {
-		PlaylistEntity entidade = new PlaylistEntity();
-		BeanUtils.copyProperties(dto, entidade);
-		return entidade;
+		PlaylistEntity playlist = new PlaylistEntity();
+		playlist.setName(dto.getName());
+		playlist.setPublic_share(dto.getPublic_share());
+		return playlist;
 	}
 
 
 	@Override
-	public GenericService<PlaylistEntity> getService() {
+	protected GenericService<PlaylistEntity> getService() {
 		return playlistService;
 	}
-	
+		
 }

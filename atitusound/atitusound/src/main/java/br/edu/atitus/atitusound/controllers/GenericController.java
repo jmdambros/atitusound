@@ -21,7 +21,7 @@ import br.edu.atitus.atitusound.entities.GenericEntity;
 import br.edu.atitus.atitusound.services.GenericService;
 
 public abstract class GenericController <TEntidade extends GenericEntity,TDto> {
-	public abstract GenericService<TEntidade> getService();
+	protected abstract GenericService<TEntidade> getService();
 	
 	protected abstract TEntidade convertDTO2Entity (TDto dto);
 
