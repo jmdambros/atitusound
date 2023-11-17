@@ -38,7 +38,7 @@ public class PlaylistServiceImpl implements PlaylistService{
 	@Override
 	public Page<List<PlaylistEntity>> findByNameContainingIgnoreCase(Pageable pageable, String name) throws Exception {
 		UserEntity user = (UserEntity) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		return playlistRepository.findByNameContainingIgnoreCaseAndUserOrPublicShare(name, user, true, pageable);
+		return playlistRepository.findByNameContainingIgnoreCaseAndUserOrPublicshare(name, user, true, pageable);
 	}
 
 }
